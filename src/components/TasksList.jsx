@@ -23,9 +23,9 @@ const TasksList = () => {
     };
 
     return (
-        <>
+        <div className="component">
             <h3>Список задач</h3>
-            <ul>
+            <ul className="tasksList">
                 {tasks.map((task) => (
                     <li>{task}</li>
                 ))}
@@ -34,7 +34,7 @@ const TasksList = () => {
             <input value={newTask} onChange={(e) => onChangeInput(e)}></input>
             <button onClick={onAddTask}>Добавить задачу</button>
             <button onClick={onDeleteLastTask}>Удалить последнюю задачу</button>
-        </>
+        </div>
     );
 };
 

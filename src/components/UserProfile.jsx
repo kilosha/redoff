@@ -20,9 +20,9 @@ const UserProfile = () => {
     };
 
     return (
-        <>
+        <div className="component">
             <h3>Профиль пользователя</h3>
-            <div>
+            <div className="userProfileInfo">
                 <div>Имя: {user.name}</div>
                 <div>Возраст: {user.age}</div>
                 <div>Активен: {user.isActive ? 'да' : 'нет'}</div>
@@ -32,7 +32,7 @@ const UserProfile = () => {
                 <button onClick={onIncreaseAge}>Увеличить возраст</button>
                 <button onClick={onToggleActiveState}>Переключить активность</button>
             </div>
-        </>
+        </div>
     );
 };
 
