@@ -27,13 +27,17 @@ const TasksList = () => {
             <h3>Список задач</h3>
             <ul className="tasksList">
                 {tasks.map((task) => (
-                    <li>{task}</li>
+                    <li key={crypto.randomUUID()}>{task}</li>
                 ))}
             </ul>
 
             <input value={newTask} onChange={(e) => onChangeInput(e)}></input>
-            <button onClick={onAddTask}>Добавить задачу</button>
-            <button onClick={onDeleteLastTask}>Удалить последнюю задачу</button>
+            <button disabled={!newTask} onClick={onAddTask}>
+                Добавить задачу
+            </button>
+            <button disabled={!tasks.length} onClick={onDeleteLastTask}>
+                Удалить последнюю задачу
+            </button>
         </div>
     );
 };

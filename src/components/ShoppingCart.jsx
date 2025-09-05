@@ -25,13 +25,14 @@ const ShoppingCart = () => {
     const onClearCart = () => {
         setCart([]);
     };
+
     return (
         <div className="component">
             <h3>Корзина товаров</h3>
             <div className="shoppingCart">
                 {cart.map((item) => {
                     return (
-                        <div className="cartItem">
+                        <div className="cartItem" key={item.id}>
                             {item.title} (Кол-во: {item.count})
                             <div className="cartItemButtons">
                                 <button onClick={() => onAddOneMore(item.id)}>
@@ -45,7 +46,9 @@ const ShoppingCart = () => {
                     );
                 })}
             </div>
-            <button onClick={onClearCart}>Очистить корзину</button>
+            <button disabled={!cart.length} onClick={onClearCart}>
+                Очистить корзину
+            </button>
         </div>
     );
 };
