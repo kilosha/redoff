@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UserProfile = () => {
     const [user, setUser] = useState({
-        name: 'Masha',
+        name: "Masha",
         age: 25,
         isActive: true
     });
 
     const onChangeName = () => {
-        setUser((prevUser) => ({ ...prevUser, name: 'Dasha' }));
+        setUser((prevUser) => ({ ...prevUser, name: "Dasha" }));
     };
 
     const onIncreaseAge = () => {
@@ -25,12 +25,14 @@ const UserProfile = () => {
             <div className="userProfileInfo">
                 <div>Имя: {user.name}</div>
                 <div>Возраст: {user.age}</div>
-                <div>Активен: {user.isActive ? 'да' : 'нет'}</div>
+                <div>Активен: {user.isActive ? "да" : "нет"}</div>
             </div>
             <div>
                 <button onClick={onChangeName}>Сменить имя</button>
                 <button onClick={onIncreaseAge}>Увеличить возраст</button>
-                <button onClick={onToggleActiveState}>Переключить активность</button>
+                <button onClick={onToggleActiveState}>
+                    Переключить активность
+                </button>
             </div>
         </div>
     );

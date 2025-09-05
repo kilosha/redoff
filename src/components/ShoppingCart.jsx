@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const ShoppingCart = () => {
     const [cart, setCart] = useState([
-        { id: 1, title: 'Футболка', count: 1 },
-        { id: 2, title: 'Кепка', count: 2 }
+        { id: 1, title: "Футболка", count: 1 },
+        { id: 2, title: "Кепка", count: 2 }
     ]);
 
     const onAddOneMore = (id) => {
@@ -34,8 +34,12 @@ const ShoppingCart = () => {
                         <div className="cartItem">
                             {item.title} (Кол-во: {item.count})
                             <div className="cartItemButtons">
-                                <button onClick={() => onAddOneMore(item.id)}>+1</button>
-                                <button onClick={() => onDeleteItem(item.id)}>Удалить</button>
+                                <button onClick={() => onAddOneMore(item.id)}>
+                                    +1
+                                </button>
+                                <button onClick={() => onDeleteItem(item.id)}>
+                                    Удалить
+                                </button>
                             </div>
                         </div>
                     );

@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const TasksList = () => {
     const [tasks, setTasks] = useState([
-        'Купить хлеб',
-        'Стать фронтенд разработчиком',
-        'Выучить Typescript'
+        "Купить хлеб",
+        "Стать фронтенд разработчиком",
+        "Выучить Typescript"
     ]);
-    const [newTask, setNewTask] = useState('');
+    const [newTask, setNewTask] = useState("");
 
     const onChangeInput = (e) => {
         setNewTask(e.target.value);
@@ -14,7 +14,7 @@ const TasksList = () => {
 
     const onAddTask = () => {
         setTasks((prevTasks) => [...prevTasks, newTask]);
-        setNewTask('');
+        setNewTask("");
     };
 
     const onDeleteLastTask = () => {
